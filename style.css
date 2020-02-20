@@ -1,0 +1,166 @@
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contacts {
+  display: flex;
+  max-width: 11rem;
+  height: 100vh;
+}
+
+.contacts-block-github {
+  min-width: 5.5rem;
+  background: #f4f91f;
+  color: #01012c;
+  overflow-y: hidden;
+}
+.contacts-block-github p {
+  font-size: 1.5rem;
+  transform: rotate(-90deg);
+  animation: animate 4s linear infinite;
+}
+/* @keyframes animate {
+  from {
+    margin-top: 0px;
+  }
+  to {
+    margin-top: 50em;
+  }
+} */
+
+.contacts-block-second {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 5.5rem;
+  height: 100vh;
+}
+
+.contacts-block-second-mail {
+  cursor: pointer;
+  min-width: 84px;
+  min-height: 84px;
+  border: 2px solid #01012c;
+  background-image: url(./images/mail.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.contacts-block-second-mail:hover {
+  background: #01012c;
+}
+
+.contacts-block-second-linkedin {
+  min-width: 5.5rem;
+  height: 100vh;
+  background: #01012c;
+}
+.contacts-block-second-linkedin p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  transform: rotate(-90deg);
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.content-description {
+  padding-left: 3rem;
+  max-width: calc(50% - 3rem);
+  font-size: 1.5rem;
+}
+
+.content-description span {
+  color: #0054f9;
+  text-transform: capitalize;
+}
+
+
+.content-description-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  line-height: 48px;
+  letter-spacing: 0.08em;
+}
+
+.content-description-design {
+  display: flex;
+  flex-direction: column;
+}
+.content-description-design p {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.content-description-design-behance_button {
+  width: 5.5rem;
+  height: 5.5rem;
+  background: #0054f9;
+}
+
+.content-codePortfolio{
+  max-width: 50%;
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  min-height: 5.5rem;
+  min-width: calc(100vw - 11rem);
+}
+
+.footer-block-blackTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 84px;
+  background: #01012c;
+  color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border: 2px solid #01012c;
+}
+
+.footer-block-blackTheme:hover {
+  background: #ffffff;
+  color: #01012c;
+  border: 2px solid #01012c;
+}
+
+.footer-block-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 84px;
+  background: #1badad;
+  border: 2px solid #1badad;
+ 
+}
+
+
+.footer-block-play_button {
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background-image: url(./images/playButton.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
