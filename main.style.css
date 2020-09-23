@@ -1,0 +1,181 @@
+body,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.offline-bg {
+  background: #fff08f;
+}
+.install-bg {
+  background: #fee2ee;
+}
+.location-bg {
+  background: #ccf8ed;
+}
+.notific-bg {
+  background: #d1e7fe;
+}
+
+.pending {
+  color: #758c9f;
+}
+
+.success {
+  color: #078761;
+}
+
+.denied {
+  color: #e42c02;
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+.main-card {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  height: 184px;
+  max-height: 184px;
+  padding: 38px 0px 38px 24px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.main-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.big-header {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.main-card_text_description {
+  font-size: 14px;
+  line-height: 140%;
+  width: 176px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.main-image {
+  width: 180px;
+  height: 180px;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 32px;
+  position: relative;
+}
+
+.nav-bar {
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.nav-header {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 40px;
+  line-height: 60px;
+  padding-left: 16px;
+}
+
+.content-image {
+  width: 400px;
+  height: 400px;
+}
+
+.secondary-header {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  padding-top: 40px;
+  padding-bottom: 8px;
+}
+
+.content-text {
+  font-size: 18px;
+  line-height: 27px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.install-container {
+  margin: 24px 0 16px;
+  width: 100%;
+  height: 184px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fee2ee;
+  border-radius: 24px;
+}
+
+.install-image {
+  width: 190px;
+  height: 190px;
+}
+
+.status-header {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 132.2%;
+  color: #242424;
+}
+
+#install-status {
+  padding-left: 16px;
+}
+
+#install-prompt {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  bottom: 0px;
+  background: #fff08f;
+}
+
+.filled-button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  border: none;
+  outline: none;
+  width: calc(100% - 64px);
+  padding: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+
+  background: #fff08f;
+  border-radius: 8px;
+}
+
+.notifications-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 16px;
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #758C9F;
+  background: #E7EAEF;
+  border-radius: 8px;
+}
