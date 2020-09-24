@@ -54,15 +54,16 @@
 }
 
 .main-card_text{
+  min-width: 188px;
   flex: 2;
 }
 .main-image-container{
-  flex: 1;
+  flex: 2;
 }
 
 .big-header {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 8vw;
   line-height: 48px;
 }
 
