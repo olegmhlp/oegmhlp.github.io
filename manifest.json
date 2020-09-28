@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation" : "portrait-primary",
   "scope": "/",
-  "start_url": "/index.html",
+  "start_url": ".",
   "description": "A simple PWA App with basic features",
    "lang": "en-US",
 

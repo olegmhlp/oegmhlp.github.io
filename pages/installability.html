@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installability</title>
+    <link rel="manifest" href="../manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="../main.style.css" rel='stylesheet'>
+    
 </head>
 
 <body>
@@ -29,10 +31,11 @@
         <img src="../assets/doge.png" class='doge' alt="doge">
         <div>
             <p class='prompt-text'>PLZ install me</p>
-            <button class='prompt-button'>INSTALL</button>
+            <button id='prompt-button' >INSTALL</button>
         </div>
         <img src="../assets/close.svg" class='prompt-close' alt="close">
     </div>
+    <script src="/js/install.js"></script>
 </body>
 
 </html>

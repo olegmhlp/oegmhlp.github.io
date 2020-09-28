@@ -237,7 +237,7 @@
   padding-bottom: 8px;
 }
 
-.prompt-button {
+#prompt-button {
   cursor: pointer;
   width: 160px;
   height: 36px;
