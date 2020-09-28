@@ -4,9 +4,11 @@
   "theme_color": "#FFFFFF",
   "background_color": "#FFF08F",
   "display": "standalone",
-  "orientation" : "portrait",
+  "orientation" : "portrait-primary",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/index.html",
+  "description": "A simple PWA App with basic features",
+   "lang": "en-US",
 
   "icons": [
     {
