@@ -29,18 +29,21 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  return event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (response) {
-        return response;
-      } else {
-        return fetch(event.request).then(function (res) {
-          return caches.open(CACHE_DYNAMIC_CACHE).then(function (cache) {
-            cache.put(event.request.url, res.clone());
-            return res;
+  event.respondWith(
+    caches.match(event.request).then((r) => {
+      console.log('[Service Worker] Fetching resource: ' + event.request.url);
+      return (
+        r ||
+        fetch(event.request).then((response) => {
+          return caches.open(CACHE_DYNAMIC_CACHE).then((cache) => {
+            console.log(
+              '[Service Worker] Caching new resource: ' + event.request.url
+            );
+            cache.put(event.request, response.clone());
+            return response;
           });
-        });
-      }
+        })
+      );
     })
   );
 });
