@@ -18,14 +18,15 @@
         </div>
         <div class='content'>
             <p class='content-text'>PWA let user to add web page to the home screen.</p>
-            <p class=status-header>Notifications:<span class="pending" id='install-status'>pending</span></p>
-            <p class=status-header>Web push server:<span class="pending" id='install-status'>not connected</span></p>
+            <p class=status-header>Notifications: <span class="pending" id='perm-status'>unknown</span></p>
+            <p class=status-header>Web push server: <span class="pending" id='install-status'>not connected</span></p>
             <button class='notifications-button'>SEND NOTIFICATION</button>
         </div>
 
 
     </div>
-    <button class='filled-button'>ENABLE NOTIFICATIONS</button>
+    <button class='filled-button' id='enable-notification'>ENABLE NOTIFICATIONS</button>
+    <script src='/js/notification.js'></script>
 </body>
 
 </html>

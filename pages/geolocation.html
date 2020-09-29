@@ -19,7 +19,7 @@
         <div class='content'>
             <p class='content-text'>For privacy reasons, the user is asked for permission to report location
                 information.</p>
-            <p class=status-header>Access rights: <span class="pending" id='install-status'>pending</span></p>
+            <p class=status-header>Location status: <span class="pending" id='location-status'>unknown</span></p>
 
             <div class='location-details'>
                 <table>
@@ -29,20 +29,18 @@
                     </tr>
                     <tr>
                         <td class="td-title">Latitude</td>
-                        <td>123.123</td>
+                        <td id='latitude'>-</td>
                     </tr>
                     <tr>
                         <td class="td-title">Longitude</td>
-                        <td>123.123</td>
+                        <td id='longitude'>-</td>
                     </tr>
                 </table>
             </div>
         </div>
-
-
-
     </div>
-    <button class='filled-button'>GET LOCATION</button>
+    <button class='filled-button' id='get-location'>GET LOCATION</button>
+    <script src="/js/location.js"></script>
 </body>
 
 </html>
