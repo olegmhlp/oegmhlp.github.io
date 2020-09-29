@@ -8,15 +8,31 @@ const getPermission = () => {
   });
 };
 
+const options = {
+  body: 'Notification',
+  icon: '/favicons/mstile-150x150.png',
+  vibrate: [100, 50, 100],
+  data: {
+    dateOfArrival: Date.now(),
+    primaryKey: 1,
+  },
+};
+
+const sendNotification = () => {
+ return navigator.serviceWorker.ready.then(function(registration) {
+    registration.showNotification('Notification with ServiceWorker', options);
+  });
+};
+
 if (Notification.permission == 'granted') {
   const permStatus = document.getElementById('perm-status');
   permStatus.textContent = 'granted';
   permStatus.style.color = '#078761';
-  navigator.serviceWorker.getRegistration().then((reg) => {
-    // TODO 2.4 - Add 'options' object to configure the notification
 
-    reg.showNotification('Hello world!');
-  });
+  const sendButton = document.getElementById('notifications-button');
+  sendButton.style.background = '#078761'
+  sendButton.style.color = '#FFFFFF'
+  sendButton.addEventListener('click', sendNotification)
 }
 
 document

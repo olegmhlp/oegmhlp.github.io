@@ -195,7 +195,7 @@
   border-radius: 8px;
 }
 
-.notifications-button {
+#notifications-button {
   cursor: pointer;
   border: none;
   outline: none;
