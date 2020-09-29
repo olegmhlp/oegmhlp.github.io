@@ -1,7 +1,7 @@
 {
   "name": "Much PWA",
   "short_name": "Much PWA",
-  "theme_color": "#FFF08F",
+  "theme_color": "#FFFFFF",
   "background_color": "#FFF08F",
   "display": "standalone",
   "orientation": "portrait-primary",
