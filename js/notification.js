@@ -9,7 +9,7 @@ const getPermission = () => {
 };
 
 const options = {
-  body: 'Notification',
+  body: 'Vecher v hatu',
   icon: '/favicons/mstile-150x150.png',
   vibrate: [100, 50, 100],
   data: {
@@ -20,7 +20,7 @@ const options = {
 
 const sendNotification = () => {
  return navigator.serviceWorker.ready.then(function(registration) {
-    registration.showNotification('Notification with ServiceWorker', options);
+    registration.showNotification('Bonjour, epta', options);
   });
 };
 
