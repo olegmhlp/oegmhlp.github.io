@@ -28,9 +28,11 @@ self.addEventListener('activate', (event) => {
   return self.clients.claim();
 });
 
-
-
 self.addEventListener('fetch', (event) => {
+  if (event.request.method === 'POST'){
+    return;
+  }
+  else{
   event.respondWith(
     caches.match(event.request).then((r) => {
       console.log('[Service Worker] Fetching resource: ' + event.request.url);
@@ -41,11 +43,32 @@ self.addEventListener('fetch', (event) => {
             console.log(
               '[Service Worker] Caching new resource: ' + event.request.url
             );
+           
             cache.put(event.request, response.clone());
             return response;
           });
         })
       );
     })
-  );
+  )}
+});
+
+self.addEventListener('notificationclick', function (event) {
+  event.notification.close();
+  // event.waitUntil(clients.openWindow(ROOT_URL));
+});
+
+self.addEventListener('push', function (event) {
+  console.log(event.data);
+  const ntfData = event.data.json().notification;
+  const ntfPromise = self.registration.showNotification(ntfData.title, {
+    body: 'Remote notification',
+    icon: '/favicons/mstile-150x150.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1,
+    },
+  });
+  event.waitUntil(ntfPromise);
 });
