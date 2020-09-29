@@ -3,12 +3,16 @@ const CACHE_DYNAMIC_CACHE = 'dynamic';
 const DATA_TO_CACHE = [
   '/',
   '/index.html',
+  '/pages/offline.html',
   '/main.style.css',
   '/js/app.js',
   '/assets/main_offline.webp',
   '/assets/main_installability.webp',
   '/assets/main_geolocation.webp',
   '/assets/main_notification.webp',
+  '/assets/anim_girl.gif',
+  '/assets/anim_bug.gif',
+  '/assets/return.svg',
   'https://fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2',
   'https://fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2',
 ];
@@ -29,28 +33,28 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method === 'POST'){
+  if (event.request.method === 'POST') {
     return;
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((r) => {
+        console.log('[Service Worker] Fetching resource: ' + event.request.url);
+        return (
+          r ||
+          fetch(event.request).then((response) => {
+            return caches.open(CACHE_DYNAMIC_CACHE).then((cache) => {
+              console.log(
+                '[Service Worker] Caching new resource: ' + event.request.url
+              );
+
+              cache.put(event.request, response.clone());
+              return response;
+            });
+          })
+        );
+      })
+    );
   }
-  else{
-  event.respondWith(
-    caches.match(event.request).then((r) => {
-      console.log('[Service Worker] Fetching resource: ' + event.request.url);
-      return (
-        r ||
-        fetch(event.request).then((response) => {
-          return caches.open(CACHE_DYNAMIC_CACHE).then((cache) => {
-            console.log(
-              '[Service Worker] Caching new resource: ' + event.request.url
-            );
-           
-            cache.put(event.request, response.clone());
-            return response;
-          });
-        })
-      );
-    })
-  )}
 });
 
 self.addEventListener('notificationclick', function (event) {
