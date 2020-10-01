@@ -1,9 +1,9 @@
 const CACHE_STATIC_CACHE = 'static';
 const CACHE_DYNAMIC_CACHE = 'dynamic';
 const DATA_TO_CACHE = [
-  '/',
   '/index.html',
   '/pages/offline.html',
+  '/pages/fallback.html',
   '/main.style.css',
   '/js/app.js',
   '/assets/main_offline.webp',
@@ -13,6 +13,7 @@ const DATA_TO_CACHE = [
   '/assets/anim_girl.gif',
   '/assets/anim_bug.gif',
   '/assets/return.svg',
+  'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600',
   'https://fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2',
   'https://fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2',
 ];
@@ -42,16 +43,22 @@ self.addEventListener('fetch', (event) => {
         return (
           r ||
           fetch(event.request).then((response) => {
-            return caches.open(CACHE_DYNAMIC_CACHE).then((cache) => {
-              console.log(
-                '[Service Worker] Caching new resource: ' + event.request.url
-              );
+            return caches
+              .open(CACHE_DYNAMIC_CACHE)
+              .then((cache) => {
+                console.log(
+                  '[Service Worker] Caching new resource: ' + event.request.url
+                );
 
-              cache.put(event.request, response.clone());
-              return response;
-            });
+                cache.put(event.request, response.clone());
+                return response;
+              })
+              
           })
         );
+      }).catch(function () {
+        console.log('No way to found this resource');
+        return caches.match('/pages/fallback.html');
       })
     );
   }

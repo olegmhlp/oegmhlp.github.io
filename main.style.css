@@ -301,3 +301,26 @@
     font-size: 56px;
   }
 }
+
+
+.fallback-content {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 800px) {
+  .fallback-content {
+    margin-top: 2vh;
+  }
+}
+
+.fallback-image {
+  margin-top: 2rem;
+  width: 70%;
+  max-width: 300px;
+  height: auto;
+}
