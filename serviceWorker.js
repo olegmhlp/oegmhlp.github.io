@@ -10,6 +10,7 @@ const DATA_TO_CACHE = [
   '/assets/main_installability.webp',
   '/assets/main_geolocation.webp',
   '/assets/main_notification.webp',
+  '/assets/fallback.webp',
   '/assets/anim_girl.gif',
   '/assets/anim_bug.gif',
   '/assets/return.svg',
