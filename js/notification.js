@@ -64,7 +64,7 @@ function configurePushSub() {
       }
     })
     .then(function (newSub) {
-      return fetch('https://testpush-dc042.firebaseio.com/subs', {
+      return fetch('https://pushpush-a1bf7.firebaseio.com/subs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
