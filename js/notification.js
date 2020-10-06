@@ -53,7 +53,7 @@ function configurePushSub() {
       if (sub === null) {
         // Create a new subscription
         var vapidPublicKey =
-          'BALz6Dk2o2PZgzYlii0kCSAFweTVFqESg0MkqzJfZYC3ymwHf2E09ZjgOgNoILLJpLAXztSSzgBkEmomFJrx870';
+          'BBryMINiPvYGydc_ocl3E4de5LjsxTSz4i_rDHY4n3-UHyOeh1JdjG4WZMWp3V-ki0ngQR4Riz5u2D-tWDtnQv0';
         var convertedVapidPublicKey = urlBase64ToUint8Array(vapidPublicKey);
         return reg.pushManager.subscribe({
           userVisibleOnly: true,
@@ -64,8 +64,7 @@ function configurePushSub() {
       }
     })
     .then(function (newSub) {
-      console.log('triggered');
-      return fetch('https://testpush-dc042.firebaseio.com/json', {
+      return fetch('https://testpush-dc042.firebaseio.com/subs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
