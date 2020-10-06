@@ -20,7 +20,7 @@ const options = {
 
 const sendLocalNotification = () => {
   return navigator.serviceWorker.ready.then(function (registration) {
-    registration.showNotification('Bonjour, epta', options);
+    registration.showNotification('Bonjour', options);
   });
 };
 
@@ -65,7 +65,7 @@ function configurePushSub() {
     })
     .then(function (newSub) {
       console.log('triggered');
-      return fetch('http://localhost:5000/subscribe', {
+      return fetch('https://testpush-dc042.firebaseio.com/json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
