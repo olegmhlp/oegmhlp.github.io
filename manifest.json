@@ -1,5 +1,6 @@
 {
   "name": "Much PWA",
+  "manifest_version": 3,
   "short_name": "Much PWA",
   "theme_color": "#FFFFFF",
   "background_color": "#FFF08F",
